@@ -1,0 +1,1320 @@
+Array
+(
+    [0] => Array
+        (
+            [id] => 3
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm ok đấy
+            [time] => 2024-11-24 15:08:33
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+<<<<<<< HEAD
+    [0] => Array
+        (
+            [id] => 3
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm ok đấy
+            [time] => 2024-11-24 15:08:33
+            [username] => thanhvien
+        )
+
+)
+=======
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [idpro] => 24
+            [idUser] => 6
+            [noidung] => sản phẩm tệ
+            [time] => 2024-11-24 19:34:36
+            [username] => newAdmin
+        )
+
+)
+Array
+(
+)
+Array
+(
+)
+Array
+(
+)
+Array
+(
+)
+Array
+(
+)
+Array
+(
+)
+Array
+(
+)
+Array
+(
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 2
+            [idpro] => 22
+            [idUser] => 6
+            [noidung] => sản phậm tệ vãi
+
+            [time] => 2024-11-24 19:40:23
+            [username] => newAdmin
+        )
+
+)
+Array
+(
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 3
+            [idpro] => 22
+            [idUser] => 6
+            [noidung] => đánh giá đâu sao tệ vậy ???
+
+            [time] => 2024-11-24 19:40:42
+            [username] => newAdmin
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 3
+            [idpro] => 22
+            [idUser] => 6
+            [noidung] => đánh giá đâu sao tệ vậy ???
+
+            [time] => 2024-11-24 19:40:42
+            [username] => newAdmin
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 3
+            [idpro] => 22
+            [idUser] => 6
+            [noidung] => đánh giá đâu sao tệ vậy ???
+
+            [time] => 2024-11-24 19:40:42
+            [username] => newAdmin
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 4
+            [idpro] => 22
+            [idUser] => 8
+            [noidung] => được đấy
+            [time] => 2024-11-24 19:45:07
+            [username] => admin3
+        )
+
+    [1] => Array
+        (
+            [id] => 3
+            [idpro] => 22
+            [idUser] => 6
+            [noidung] => đánh giá đâu sao tệ vậy ???
+
+            [time] => 2024-11-24 19:40:42
+            [username] => newAdmin
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 3
+            [idpro] => 22
+            [idUser] => 6
+            [noidung] => đánh giá đâu sao tệ vậy ???
+
+            [time] => 2024-11-24 19:40:42
+            [username] => newAdmin
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 3
+            [idpro] => 22
+            [idUser] => 6
+            [noidung] => đánh giá đâu sao tệ vậy ???
+
+            [time] => 2024-11-24 19:40:42
+            [username] => newAdmin
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 3
+            [idpro] => 22
+            [idUser] => 6
+            [noidung] => đánh giá đâu sao tệ vậy ???
+
+            [time] => 2024-11-24 19:40:42
+            [username] => newAdmin
+        )
+
+)
+Array
+(
+)
+Array
+(
+)
+Array
+(
+)
+>>>>>>> bd2d8f83351e666e3c4962b8ad13e7e94a50da58
+Array
+(
+)
+Array
+(
+)
+Array
+(
+<<<<<<< HEAD
+    [0] => Array
+        (
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+=======
+)
+Array
+(
+)
+Array
+(
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [idpro] => 24
+            [idUser] => 2
+            [noidung] => lương chó
+            [time] => 2024-11-25 09:43:27
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+)
+Array
+(
+)
+Array
+(
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 2
+            [idpro] => 22
+            [idUser] => 2
+            [noidung] => j
+            [time] => 2024-11-25 09:54:07
+>>>>>>> 64bb072c58083e096a334a16c4df90fdc526a87d
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+<<<<<<< HEAD
+            [id] => 6
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => ok nhé
+            [time] => 2024-11-25 09:23:54
+=======
+            [id] => 2
+            [idpro] => 22
+            [idUser] => 2
+            [noidung] => j
+            [time] => 2024-11-25 09:54:07
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 3
+            [idpro] => 22
+            [idUser] => 2
+            [noidung] => djjd
+            [time] => 2024-11-25 16:57:06
+>>>>>>> 64bb072c58083e096a334a16c4df90fdc526a87d
+            [username] => thanhvien
+        )
+
+    [1] => Array
+        (
+<<<<<<< HEAD
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+=======
+            [id] => 2
+            [idpro] => 22
+            [idUser] => 2
+            [noidung] => j
+            [time] => 2024-11-25 09:54:07
+>>>>>>> 64bb072c58083e096a334a16c4df90fdc526a87d
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+<<<<<<< HEAD
+    [0] => Array
+        (
+            [id] => 6
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => ok nhé
+            [time] => 2024-11-25 09:23:54
+=======
+)
+Array
+(
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 3
+            [idpro] => 22
+            [idUser] => 2
+            [noidung] => djjd
+            [time] => 2024-11-25 16:57:06
+>>>>>>> 64bb072c58083e096a334a16c4df90fdc526a87d
+            [username] => thanhvien
+        )
+
+    [1] => Array
+        (
+<<<<<<< HEAD
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+=======
+            [id] => 2
+            [idpro] => 22
+            [idUser] => 2
+            [noidung] => j
+            [time] => 2024-11-25 09:54:07
+>>>>>>> 64bb072c58083e096a334a16c4df90fdc526a87d
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+<<<<<<< HEAD
+    [0] => Array
+        (
+            [id] => 6
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => ok nhé
+            [time] => 2024-11-25 09:23:54
+=======
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 3
+            [idpro] => 22
+            [idUser] => 2
+            [noidung] => djjd
+            [time] => 2024-11-25 16:57:06
+>>>>>>> 64bb072c58083e096a334a16c4df90fdc526a87d
+            [username] => thanhvien
+        )
+
+    [1] => Array
+        (
+<<<<<<< HEAD
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+=======
+            [id] => 2
+            [idpro] => 22
+            [idUser] => 2
+            [noidung] => j
+            [time] => 2024-11-25 09:54:07
+>>>>>>> 64bb072c58083e096a334a16c4df90fdc526a87d
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+<<<<<<< HEAD
+    [0] => Array
+        (
+            [id] => 6
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => ok nhé
+            [time] => 2024-11-25 09:23:54
+=======
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 3
+            [idpro] => 22
+            [idUser] => 2
+            [noidung] => djjd
+            [time] => 2024-11-25 16:57:06
+>>>>>>> 64bb072c58083e096a334a16c4df90fdc526a87d
+            [username] => thanhvien
+        )
+
+    [1] => Array
+        (
+<<<<<<< HEAD
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 6
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => ok nhé
+            [time] => 2024-11-25 09:23:54
+            [username] => thanhvien
+        )
+
+    [1] => Array
+        (
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 7
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => ok
+            [time] => 2024-11-25 11:52:54
+            [username] => thanhvien
+        )
+
+    [1] => Array
+        (
+            [id] => 6
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => ok nhé
+            [time] => 2024-11-25 09:23:54
+            [username] => thanhvien
+        )
+
+    [2] => Array
+        (
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 6
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => ok nhé
+            [time] => 2024-11-25 09:23:54
+            [username] => thanhvien
+        )
+
+    [1] => Array
+        (
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+=======
+            [id] => 2
+            [idpro] => 22
+            [idUser] => 2
+            [noidung] => j
+            [time] => 2024-11-25 09:54:07
+>>>>>>> 64bb072c58083e096a334a16c4df90fdc526a87d
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+)
+Array
+(
+)
+<<<<<<< HEAD
+Array
+(
+)
+Array
+(
+)
+Array
+(
+)
+Array
+(
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 6
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => ok nhé
+            [time] => 2024-11-25 09:23:54
+            [username] => thanhvien
+        )
+
+    [1] => Array
+        (
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+)
+Array
+(
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+            [username] => thanhvien
+        )
+
+)
+=======
+>>>>>>> 64bb072c58083e096a334a16c4df90fdc526a87d
+Array
+(
+<<<<<<< HEAD
+    [0] => Array
+        (
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+=======
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 3
+            [idpro] => 22
+            [idUser] => 2
+            [noidung] => djjd
+            [time] => 2024-11-25 16:57:06
+            [username] => thanhvien
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [idpro] => 22
+            [idUser] => 2
+            [noidung] => j
+            [time] => 2024-11-25 09:54:07
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+)
+Array
+(
+)
+Array
+(
+)
+Array
+(
+)
+Array
+(
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 4
+            [idpro] => 24
+            [idUser] => 1
+            [noidung] => hay lắm
+            [time] => 2024-11-27 23:57:57
+            [username] => admin
+        )
+
+)
+Array
+(
+)
+Array
+(
+)
+Array
+(
+)
+Array
+(
+)
+Array
+(
+)
+Array
+(
+)
+Array
+(
+)
+Array
+(
+)
+Array
+(
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 3
+            [idpro] => 22
+            [idUser] => 2
+            [noidung] => djjd
+            [time] => 2024-11-25 16:57:06
+            [username] => thanhvien
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [idpro] => 22
+            [idUser] => 2
+            [noidung] => j
+            [time] => 2024-11-25 09:54:07
+>>>>>>> 8a5164d3f0ba7216f5d792ec8e80ae1bb8e7d010
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+<<<<<<< HEAD
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+=======
+            [id] => 3
+            [idpro] => 22
+            [idUser] => 2
+            [noidung] => djjd
+            [time] => 2024-11-25 16:57:06
+            [username] => thanhvien
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [idpro] => 22
+            [idUser] => 2
+            [noidung] => j
+            [time] => 2024-11-25 09:54:07
+>>>>>>> 8a5164d3f0ba7216f5d792ec8e80ae1bb8e7d010
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+<<<<<<< HEAD
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+=======
+            [id] => 3
+            [idpro] => 22
+            [idUser] => 2
+            [noidung] => djjd
+            [time] => 2024-11-25 16:57:06
+            [username] => thanhvien
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [idpro] => 22
+            [idUser] => 2
+            [noidung] => j
+            [time] => 2024-11-25 09:54:07
+>>>>>>> 8a5164d3f0ba7216f5d792ec8e80ae1bb8e7d010
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+<<<<<<< HEAD
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+=======
+            [id] => 3
+            [idpro] => 22
+            [idUser] => 2
+            [noidung] => djjd
+            [time] => 2024-11-25 16:57:06
+            [username] => thanhvien
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [idpro] => 22
+            [idUser] => 2
+            [noidung] => j
+            [time] => 2024-11-25 09:54:07
+>>>>>>> 8a5164d3f0ba7216f5d792ec8e80ae1bb8e7d010
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+<<<<<<< HEAD
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+=======
+            [id] => 3
+            [idpro] => 22
+            [idUser] => 2
+            [noidung] => djjd
+            [time] => 2024-11-25 16:57:06
+            [username] => thanhvien
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [idpro] => 22
+            [idUser] => 2
+            [noidung] => j
+            [time] => 2024-11-25 09:54:07
+>>>>>>> 8a5164d3f0ba7216f5d792ec8e80ae1bb8e7d010
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+<<<<<<< HEAD
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+=======
+            [id] => 3
+            [idpro] => 22
+            [idUser] => 2
+            [noidung] => djjd
+            [time] => 2024-11-25 16:57:06
+            [username] => thanhvien
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [idpro] => 22
+            [idUser] => 2
+            [noidung] => j
+            [time] => 2024-11-25 09:54:07
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+)
+Array
+(
+)
+Array
+(
+)
+Array
+(
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 3
+            [idpro] => 22
+            [idUser] => 2
+            [noidung] => djjd
+            [time] => 2024-11-25 16:57:06
+            [username] => thanhvien
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [idpro] => 22
+            [idUser] => 2
+            [noidung] => j
+            [time] => 2024-11-25 09:54:07
+>>>>>>> 8a5164d3f0ba7216f5d792ec8e80ae1bb8e7d010
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+<<<<<<< HEAD
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+=======
+            [id] => 3
+            [idpro] => 22
+            [idUser] => 2
+            [noidung] => djjd
+            [time] => 2024-11-25 16:57:06
+            [username] => thanhvien
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [idpro] => 22
+            [idUser] => 2
+            [noidung] => j
+            [time] => 2024-11-25 09:54:07
+>>>>>>> 8a5164d3f0ba7216f5d792ec8e80ae1bb8e7d010
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+<<<<<<< HEAD
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+            [status] => 0
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+            [status] => 0
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+            [status] => 0
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+            [status] => 1
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+            [status] => 0
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+            [status] => 0
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+            [status] => 0
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+            [status] => 1
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+            [status] => 1
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 5
+            [idpro] => 20
+            [idUser] => 2
+            [noidung] => sản phẩm đẹp tuyệt
+            [time] => 2024-11-25 09:23:47
+            [status] => 1
+=======
+            [id] => 3
+            [idpro] => 22
+            [idUser] => 2
+            [noidung] => djjd
+            [time] => 2024-11-25 16:57:06
+            [username] => thanhvien
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [idpro] => 22
+            [idUser] => 2
+            [noidung] => j
+            [time] => 2024-11-25 09:54:07
+>>>>>>> 8a5164d3f0ba7216f5d792ec8e80ae1bb8e7d010
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 5
+            [idpro] => 24
+            [idUser] => 1
+            [noidung] => hihii
+            [time] => 2024-11-29 00:05:13
+            [username] => admin
+        )
+
+)
+Array
+(
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 3
+            [idpro] => 22
+            [idUser] => 2
+            [noidung] => djjd
+            [time] => 2024-11-25 16:57:06
+            [username] => thanhvien
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [idpro] => 22
+            [idUser] => 2
+            [noidung] => j
+            [time] => 2024-11-25 09:54:07
+            [username] => thanhvien
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 3
+            [idpro] => 22
+            [idUser] => 2
+            [noidung] => djjd
+            [time] => 2024-11-25 16:57:06
+            [username] => thanhvien
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [idpro] => 22
+            [idUser] => 2
+            [noidung] => j
+            [time] => 2024-11-25 09:54:07
+            [username] => thanhvien
+        )
+
+)
