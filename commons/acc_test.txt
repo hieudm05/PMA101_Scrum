@@ -1,0 +1,133 @@
+test momo:
+NGUYEN VAN A
+9704 0000 0000 0018
+03/07
+OTP
+
+test vnpay:
+(vnp_TmnCode): CGXZLS0Z
+(vnp_HashSecret): XNBCJFAKAZQSGTARRLGCHVZWCIOIGSHN
+Ngân hàng: NCB
+Số thẻ: 9704198526191432198
+Tên chủ thẻ:NGUYEN VAN A
+Ngày phát hành:07/15
+Mật khẩu OTP:123456
+
+partnerCode=MOMOBKUN20180529&orderId=1733216478
+&requestId=1733216478
+&amount=10000
+&orderInfo=Thanh+to%C3%A1n+qua+MoMo&orderType=momo_wallet&transId=4253437639
+&resultCode=0&message=Successful.&payType=napas
+&responseTime=1733217143727
+&extraData=
+&signature=1e62ae20b9b0a6f9ac87b21d48dc088fb978da85755f6b542c42993ec09b450e
+
+public function carts() {
+        // Kiểm tra nếu giỏ hàng chưa tồn tại, khởi tạo mảng giỏ hàng
+        if (!isset($_SESSION['cart'])) {
+            $_SESSION['cart'] = [];
+        }
+        $userRole = $_SESSION['user']['role'] ?? null; // Gán null nếu không tồn tại
+        if( $userRole == 1){
+            
+            echo '<script>
+            // Khắc phục lỗi mất thanh cuộn
+            document.body.style.overflowX = "auto"; 
+            document.body.style.overflowY = "auto";  
+            Swal.fire({
+                text: "Admin không thể mua hàng",
+                icon: "warning",
+                confirmButtonColor: "#C62E2E"
+                });
+        </script>';
+        $listCarts= $this->modelClients->listCartByUser($_SESSION['user']['id']);
+        // var_dump($listCarts);
+        // header('location: http://localhost/base_test_DA1/public/');
+        $this->home();
+        exit();
+    }
+        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SESSION['user'])) {
+           
+            $id = $_POST['id'];
+            $namesp = $_POST['namesp'];
+            $img = $_POST['img'];
+            $price = (float) $_POST['price'];
+            $mota = $_POST['mota'];
+            $remaining_quantity = $_POST['quantity'] - 1;
+            $soluong = 1;
+
+
+             // Xem số lượng trong bảng products là bao nhiêu
+            $currentQuantity = $this->modelClients->getCartQuantity( $id);
+            $newPro = $currentQuantity - 1;
+            // var_dump($newPro, $id);die();
+            // var_dump($currentQuantity); die();
+            $tongTien = ($soluong + 1) * $price;
+        
+            // Kiểm tra sản phẩm đã tồn tại trong giỏ hàng chưa
+            $exists = $this->modelClients->checkCarts($_SESSION['user']['id'], $id);
+        
+            if ($exists) {
+                    $this->modelClients->updateQuantityProducts($id, $newPro);
+                    $this->modelClients->updateQuantity($_SESSION['user']['id'], $id, $currentQuantity + 1, $tongTien);
+                
+                // Cập nhật số lượng kho nếu còn hàng
+                if ($remaining_quantity > 0) {
+                    $currentRemainingQuantity = $this->modelClients->getRemainingQuantity($id);
+                    $this->modelClients->updateRemainingQuantity($id, $currentRemainingQuantity - 1);
+                } else {
+                    echo '<script>
+                                 // Khắc phục lỗi mất thanh cuộn
+                                document.body.style.overflowX = "auto"; 
+                                document.body.style.overflowY = "auto";  
+                                Swal.fire({
+                                    text: "Sản phẩm đã hết hàng!",
+                                    icon: "error",
+                                    confirmButtonColor: "#C62E2E"
+                                });
+                            </script>';
+                            exit(); 
+                }
+            }
+        
+            // Nếu sản phẩm chưa tồn tại, thêm sản phẩm mới vào giỏ hàng
+            if (!$exists) {
+                $newProduct = [
+                    'id' => $id,
+                    'namesp' => $namesp,
+                    'img' => $img,
+                    'price' => $price,
+                    'soluong' => $soluong,
+                    'tongTien' => $tongTien,
+                    'mota' => $mota,
+                    'remaining_quantity' => $remaining_quantity,
+                ];
+                array_push($_SESSION['cart'], $newProduct);
+                $this->modelClients->addCarts($_SESSION['user']['id'], $id, $img, $namesp, $price, $soluong, $tongTien, $mota, $remaining_quantity);
+            }
+            // Lấy danh sách giỏ hàng của người dùng
+            $listCarts = $this->modelClients->listCartByUser($_SESSION['user']['id']);
+            require_once '../views/Clients/carts/cart.php';
+            // Chuyển hướng về trang hiện tại để tránh gửi lại POST
+            header("Location: " . $_SERVER['REQUEST_URI']);
+            exit();
+        }
+        
+        if(!isset($_SESSION['user'])){
+        echo '<script>
+                // Khắc phục lỗi mất thanh cuộn
+                document.body.style.overflowX = "auto"; 
+                document.body.style.overflowY = "auto";  
+                Swal.fire({
+                    text: "Bạn cần đăng nhập để truy cập giỏ hàng",
+                    icon: "warning",
+                    confirmButtonColor: "#C62E2E"
+                    });
+              </script>';
+              require_once '../views/Clients/accounts/login.php';
+            //   $listCarts= $this->modelClients->listCartByUser($_SESSION['user']['id']);
+              // var_dump($listCarts);
+        }
+        $listCarts= $this->modelClients->listCartByUser($_SESSION['user']['id']);
+        require_once '../views/Clients/carts/cart.php';
+    }
