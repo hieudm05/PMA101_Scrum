@@ -7,6 +7,7 @@ class AdminModels
     public function __construct() { // Hàm khởi tạo kết nối đối tượng
         $this->conn = connectDB();
     }
+
     public function deleteDm($id){
         try {
             $sql = 'DELETE FROM categories WHERE id = :id ';
