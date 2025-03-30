@@ -86,5 +86,5 @@ class HomeController
         require_once '../../views/Admins/DanhMuc/updateDm.php';
     }
 
-
+//  controller
 }

@@ -6,4 +6,4 @@ Nếu gặp lỗi merge conflict khi `git pull origin main`, làm theo các bư�
    ```sh
    git status
 
-   2.jsjadjasdas
+   2.git pull  --rebase origin main
