@@ -88,7 +88,10 @@ class AdminModels
             echo 'err'.$e->getMessage();
         }
     }
+<<<<<<< HEAD
 
 
    
+=======
+>>>>>>> 720a71c4478083b4942d612863239200130569ed
 }
