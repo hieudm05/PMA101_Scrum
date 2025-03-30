@@ -8,3 +8,24 @@ Nếu gặp lỗi merge conflict khi `git pull origin main`, làm theo các bư�
    2.git pull  --rebase origin main
    2.jsjadjasdas
 
+
+# GHI CHÚ: XỬ LÝ LỖI MERGE CONFLICT TRONG GIT
+
+Nếu gặp lỗi merge conflict khi `git pull origin main`, làm theo các bước sau:
+
+1. Kiểm tra file nào bị xung đột:
+   ```sh
+   git status
+   2.git pull  --rebase origin main
+   2.jsjadjasdas
+
+
+# GHI CHÚ: XỬ LÝ LỖI MERGE CONFLICT TRONG GIT
+
+Nếu gặp lỗi merge conflict khi `git pull origin main`, làm theo các bước sau:
+
+1. Kiểm tra file nào bị xung đột:
+   ```sh
+   git status
+   2.git pull  --rebase origin main
+   2.jsjadjasdas
