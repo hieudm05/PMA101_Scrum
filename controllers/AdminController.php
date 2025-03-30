@@ -39,6 +39,11 @@ class HomeController
             $this->modelAdmin->updateOrderStatus($id, $bill_status + 1);
             header('location: router.php');
         }
+<<<<<<< HEAD
+=======
+
+        // đẩy nhầm controller
+>>>>>>> 0fce35667a2f7ff38987b7859b1666df9666a48b
     }
 
        // Danh Mục

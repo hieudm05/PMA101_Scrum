@@ -50,6 +50,48 @@ class AdminModels
             return false;
         }
     }
+<<<<<<< HEAD
+=======
+    public function getAllDanhMuc() {
+        try {
+            $sql = 'SELECT * FROM categories ORDER BY id DESC';
+   
+            $stmt = $this->conn->prepare($sql);
+       
+            $stmt->execute();
+
+
+            return $stmt->fetchAll();
+        } catch(Exception $e) {
+            echo $e->getMessage();
+        }
+    }
+    public function postDm($name) {
+        try {
+            $sql = 'INSERT INTO categories(name) VALUES(:name)';
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute(['name'=>$name]);
+            return true;
+        } catch(Exception $e) {
+            echo $e->getMessage();
+        }
+    }
+
+
+    public function getDmById( $id){
+        try {
+            $sql = 'SELECT * FROM categories WHERE id = '.$id;
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetch();
+
+
+        }catch(Exception $e){
+            echo 'err'.$e->getMessage();
+        }
+    }
+
+>>>>>>> 0fce35667a2f7ff38987b7859b1666df9666a48b
 
    
 }
