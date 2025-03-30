@@ -44,9 +44,9 @@ class HomeController
     }
 
 
-       // Danh Mục
-       public function formAddDm() {
+       // Danh Mụ
 
+       public function formAddDm() {
         require_once '../../views/Admins/DanhMuc/formAddDM.php';
     }
 

@@ -5,5 +5,6 @@ Nếu gặp lỗi merge conflict khi `git pull origin main`, làm theo các bư�
 1. Kiểm tra file nào bị xung đột:
    ```sh
    git status
-
    2.git pull  --rebase origin main
+   2.jsjadjasdas
+
