@@ -43,8 +43,10 @@ class HomeController
         // đẩy nhầm controller
     }
 
+
        // Danh Mục
        public function formAddDm() {
+
         require_once '../../views/Admins/DanhMuc/formAddDM.php';
     }
 

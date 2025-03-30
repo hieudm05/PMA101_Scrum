@@ -88,7 +88,4 @@ class AdminModels
             echo 'err'.$e->getMessage();
         }
     }
-
-
-   
 }
