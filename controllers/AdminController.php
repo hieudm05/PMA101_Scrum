@@ -183,6 +183,53 @@ public function updateSP() {
     }  
 }
 
+public function listBills() {
+    $listDanhMuc = $this->modelAdmin->getAllDanhMuc();
+    $listOrders = $this->modelAdmin->getAllBill();
+    // var_dump($listOrders);
+    require_once '../../views/Admins/donHang/listDonHang.php';
+}
+public function bill_items() {
+    $id = $_GET['id'];
+    $listBill = $this->modelAdmin->getBillById($id);
+    // var_dump($listBill);
+    $lydo = $this->modelAdmin->getLyDoHuyHang($id);
+    // var_dump($lydo);
+    require_once '../../views/Admins/SanPham/chitietsp.php';
+}
+
+
+
+public function updateStatusBills() {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $bill_status = (int) $_POST['bill_status'];
+        $id = $_GET['id'];
+
+        // Lấy trạng thái hiện tại
+        $currentStatus = $this->modelAdmin->getBillStatus($id);
+        // Kiểm tra trạng thái hợp lệ
+        if ($bill_status == $currentStatus + 1) {
+            if ($this->modelAdmin->updateOrderStatus($id, $bill_status)) {
+                header('location: router.php?act=listDonHang');
+            } else {
+                header('location: router.php?act=listDonHang');
+            }
+        } else {
+            echo "Lỗi";
+            header('location: router.php?act=listDonHang');
+            // exit;
+        }
+    }
+}
+
+
+
+
+///bình luận
+public function listComments() {
+$listBinhLuan = $this->modelAdmin->getAllComments();
+require_once '../../views/Admins/BinhLuan/listComments.php';
+}
 
 //  controller
 }

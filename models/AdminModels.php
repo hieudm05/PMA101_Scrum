@@ -192,4 +192,98 @@ class AdminModels
         return $stmt->fetchAll(PDO::FETCH_ASSOC);  
 
     }
+
+    public function deleteSP($id) {  
+        try {  
+            $sql = 'DELETE FROM products WHERE id = :id';  
+            $stmt = $this->conn->prepare($sql);  
+            $stmt->execute(['id' => $id]);  
+            return true;  
+        } catch(Exception $e) {  
+            echo 'Error: ' . $e->getMessage();  
+            return false;  
+        }  
+    }  
+
+
+    public function updateSP($id, $namesp, $price, $img, $mota, $iddm, $quantity) {  
+        try {  
+            $sql = "UPDATE products SET namesp = :namesp, price = :price, img = :img, mota = :mota, iddm = :iddm, quantity = :quantity WHERE id = :id";  
+            $stmt = $this->conn->prepare($sql);  
+            $stmt->execute([  
+                'namesp' => $namesp,  
+                'price' => $price,  
+                'img' => $img,  
+                'mota' => $mota,  
+                'iddm' => $iddm,
+                'quantity' => $quantity,
+                'id' => $id  
+            ]);  
+            return true;  
+        } catch (Exception $e) {  
+            echo 'Error: ' . $e->getMessage();  
+            return false;  
+        }  
+    }  
+
+
+     //đơn hàng
+     public function getAllBill() {
+        try {
+            $sql = 'SELECT
+                        bills.id AS bill_id,
+                        bills.*,
+                        accounts.username AS user_name,
+                        GROUP_CONCAT(p.namesp ORDER BY p.namesp ASC) AS product_names,
+                        GROUP_CONCAT(bi.quantity ORDER BY p.namesp ASC) AS product_quantities,
+                        GROUP_CONCAT(bi.price ORDER BY p.namesp ASC) AS product_prices,
+                        GROUP_CONCAT(p.img ORDER BY p.namesp ASC) AS product_images
+                    FROM
+                        bills
+                    JOIN
+                        accounts ON bills.idUser = accounts.id
+                    LEFT JOIN
+                        bill_items bi ON bills.id = bi.bill_id
+                    LEFT JOIN
+                        products p ON bi.product_id = p.id
+                    GROUP BY
+                        bills.id
+                    ORDER BY
+                        bills.id DESC;
+                    ';
+           
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll();
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+       
+    }
+    public function getAllBill_3() {
+        try {
+            $sql = 'SELECT
+                        bills.*,
+                        accounts.username AS user_name,
+                        GROUP_CONCAT(p.namesp ORDER BY p.namesp ASC) AS product_names,
+                        GROUP_CONCAT(bi.quantity ORDER BY p.namesp ASC) AS product_quantities,
+                        GROUP_CONCAT(bi.price ORDER BY p.namesp ASC) AS product_prices,
+                        GROUP_CONCAT(p.img ORDER BY p.namesp ASC) AS product_images,
+                        SUM(bi.quantity) AS total_quantity  -- Tổng số lượng sản phẩm
+                    FROM bills
+                    JOIN accounts ON bills.idUser = accounts.id
+                    LEFT JOIN bill_items bi ON bills.id = bi.bill_id
+                    LEFT JOIN products p ON bi.product_id = p.id
+                    WHERE bills.bill_status IN (0,4)
+                    GROUP BY bills.id
+                    ORDER BY bills.id DESC';
+   
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll();
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+    }
+
 }
