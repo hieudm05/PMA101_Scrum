@@ -349,6 +349,80 @@ class AdminModels
    
         return $revenues; // Trả về mảng doanh thu
     }
+
+     // Cập nhật trạng thái đơn hàng
+     public function updateOrderStatus($orderId, $status) {
+        // SQL query để cập nhật trạng thái đơn hàng
+        $sql = "UPDATE bills SET bill_status = :status WHERE id = :orderId";
+       
+        // Chuẩn bị câu lệnh
+        $stmt = $this->conn->prepare($sql);
+       
+        // Gắn giá trị vào các tham số
+        $stmt->bindParam(':status', $status, PDO::PARAM_INT);
+        $stmt->bindParam(':orderId', $orderId, PDO::PARAM_INT);
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    // Lấy id product theo id bill
+    function getProductIdsByBillId($bill_id) {
+        // SQL truy vấn để lấy tất cả product_id từ bảng bill_items theo bill_id
+        $sql = "SELECT product_id
+                FROM bill_items
+                WHERE bill_id = :bill_id";
+   
+        // Chuẩn bị truy vấn
+        $stmt = $this->conn->prepare($sql);
+   
+        // Thực thi truy vấn với tham số bill_id
+        $stmt->execute([':bill_id' => $bill_id]);
+   
+        // Lấy tất cả kết quả dưới dạng mảng
+        $product_ids = $stmt->fetchAll(PDO::FETCH_ASSOC);
+   
+        // Kiểm tra nếu có kết quả và trả về mảng product_id
+        if ($product_ids) {
+            return $product_ids;
+        } else {
+            return []; // Trả về mảng rỗng nếu không có kết quả
+        }
+    }
+
+
+    // Lấy số lượng products hiện tại
+    public function getQuantityPro($id) {
+        try {
+            // Câu lệnh SQL để lấy quantity theo product_id
+            $sql = 'SELECT quantity FROM products WHERE id = :id';
+           
+            // Chuẩn bị câu lệnh SQL
+            $stmt = $this->conn->prepare($sql);
+           
+            // Thực thi truy vấn với tham số id
+            $stmt->execute([':id' => $id]);
+           
+            // Lấy kết quả (PDO::FETCH_ASSOC trả về mảng kết hợp)
+            $result = $stmt->fetch();
+           
+            // Kiểm tra xem $result có phải là mảng hay không, nếu có trả về quantity
+            if ($result && isset($result['quantity'])) {
+                return $result['quantity']; // Trả về quantity của sản phẩm
+            } else {
+                return 0;  // Nếu không có sản phẩm, trả về 0
+            }
+           
+        } catch (Exception $e) {
+            // In lỗi nếu có exception
+            echo 'Error: ' . $e->getMessage();
+            return false;  // Trả về false nếu có lỗi
+        }
+    }
+
     
 
 }
