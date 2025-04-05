@@ -285,5 +285,70 @@ class AdminModels
             echo $e->getMessage();
         }
     }
+     // Tổng số sản phẩm
+     public function sumProducts(){
+        try {
+            $sql = "SELECT COUNT(*) AS total FROM products";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute();
+              // Lấy kết quả trả về
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $row['total'] ? $row['total'] : 0 ;
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+    }
+
+
+    // Tổng bình luận
+    public function sumComments(){
+        try {
+            $sql = "SELECT COUNT(*) AS total FROM comments";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute();
+              // Lấy kết quả trả về
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $row['total'] ? $row['total'] : 0 ;
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+    }
+
+
+    public function getDailyRevenue() {
+        $sql = "SELECT
+                DAYOFWEEK(STR_TO_DATE(ngaydathang, '%Y-%m-%d')) AS day_of_week,
+                SUM(total) AS total_revenue
+                FROM bills
+                WHERE bill_status = 3
+                GROUP BY day_of_week
+                ORDER BY day_of_week";
+       
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $listRevenue = $stmt->fetchAll(PDO::FETCH_ASSOC);
+       
+        // Lấy ngày hôm nay (0 đến 6, từ Chủ Nhật đến Thứ Bảy)
+        $currentDay = date('w'); // day of the week (0 for Sunday, 6 for Saturday)
+       
+        // Khởi tạo mảng doanh thu cho các ngày trong tuần (0 đến 6)
+        $revenues = array_fill(0, 7, 0); // Mảng chứa doanh thu cho 7 ngày trong tuần
+       
+        // Gán doanh thu cho đúng ngày trong tuần
+        foreach ($listRevenue as $data) {
+            if ($data['day_of_week'] !== NULL) {
+                $revenues[$data['day_of_week'] - 1] = $data['total_revenue']; // Gán doanh thu vào mảng
+            }
+        }
+       
+        // Thêm giá trị cho ngày hôm nay vào mảng nếu chưa có
+        if ($revenues[$currentDay] == 0) {
+            // Nếu hôm nay chưa có doanh thu, gán giá trị 0 hoặc tính toán doanh thu cho ngày hôm nay
+            // Ví dụ: gán $revenues[$currentDay] = 0; hoặc gán doanh thu tính toán
+        }
+   
+        return $revenues; // Trả về mảng doanh thu
+    }
+    
 
 }
