@@ -90,9 +90,4 @@ class HomeController
         require_once '../../views/Admins/DanhMuc/updateDm.php';
     }
 
-<<<<<<< HEAD
-
-=======
-//  controller
->>>>>>> 720a71c4478083b4942d612863239200130569ed
 }
