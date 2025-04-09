@@ -423,7 +423,83 @@ class AdminModels
         }
     }
 
-    
+     //binh luan
+     public function getAllComments() {
+        try {
+            $sql = 'SELECT comments.*, products.namesp AS product_name
+                    FROM comments
+                    LEFT JOIN products ON comments.idpro = products.id
+                    ORDER BY comments.time DESC';
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+            echo 'Error: ' . $e->getMessage();
+            return false;
+        }
+    }
+   
+
+
+
+
+    public function getCommentsByProduct($idpro) {
+        try {
+            $sql = 'SELECT * FROM comments WHERE idpro = :idpro ORDER BY time DESC';
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute(['idpro' => $idpro]);
+            return $stmt->fetchAll();
+        } catch (Exception $e) {
+            echo 'Error: ' . $e->getMessage();
+            return false;
+        }
+    }
+
+
+   
+
+
+    public function deleteComment($id) {
+        try {
+            $sql = 'DELETE FROM comments WHERE id = :id';
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute(['id' => $id]);
+            return true;
+        } catch (Exception $e) {
+            echo 'Error: ' . $e->getMessage();
+            return false;
+        }
+    }
+    public function getCommentById($id) {
+        try {
+            $sql = 'SELECT * FROM comments WHERE id = :id';
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute(['id' => $id]);
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+            echo 'Error: ' . $e->getMessage();
+            return false;
+        }
+    }
+   
+    public function updateCommentStatus($id, $status) {
+        try {
+            $sql = 'UPDATE comments SET status = :status WHERE id = :id';
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute(['status' => $status, 'id' => $id]);
+            return true;
+        } catch (Exception $e) {
+            echo 'Error: ' . $e->getMessage();
+            return false;
+        }
+    }
+   
+
+
+    public function __destruct() {  // Hàm hủy kết nối đối tượng
+        $this->conn = null;
+    }
+
 
 
 }
