@@ -2,7 +2,13 @@
 //chính với đạt làm đầy đủ chức năng không lỗi đầy đủ 
 
 //Sm đã giao việc trên trello
+//Sm đã giao việc trên trello
 
 //lighter and princesssdasada
 
+<<<<<<< HEAD
 // Hiếu Sm đã giao việc trên trello
+=======
+
+// 4/4 SM đã giao việc
+>>>>>>> hieusm
