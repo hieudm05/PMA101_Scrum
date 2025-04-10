@@ -129,5 +129,115 @@ class ClientModels
         }
     }
 
+    public function updateQuantityProducts($id, $quantity) {
+        try {
+            // Câu lệnh SQL để cập nhật số lượng sản phẩm
+            $sql = 'UPDATE products SET quantity = :quantity WHERE id = :id';
+           
+            // Chuẩn bị và thực thi câu lệnh SQL
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                'quantity' => $quantity,
+                'id' => $id,
+            ]);
+            if ($stmt->rowCount() > 0) {
+                return true;
+            } else {
+                return false;
+            }
+           
+        } catch (Exception $e) {
+            // Xử lý lỗi nếu có
+            echo 'Error: ' . $e->getMessage();
+            return false;
+        }
+    }
+   
+    // Nếu mà có rồi, thì cập nhật số lượng
+    public function updateQuantity($idUser, $idpro, $soluong, $thanhtien) {
+        try {
+            $sql = 'UPDATE carts SET soluong = :soluong, thanhtien = :thanhtien WHERE idUser = :idUser AND idpro = :idpro';
+ 
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                'idUser' => $idUser,
+                'idpro' => $idpro,
+                'soluong' => $soluong,
+                'thanhtien' => $thanhtien
+            ]);
+           
+        } catch (Exception $e) {
+            // Xử lý lỗi nếu có
+            echo 'Error: ' . $e->getMessage();
+            return false;
+        }
+    }
+    // Lấy số lượng sản phẩm tồn kho để trừ xuống
+    public function getRemainingQuantity( $idpro) {
+        try {
+            $sql = 'SELECT remaining_quantity FROM carts WHERE idpro = :idpro';
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                'idpro' => $idpro
+            ]);
+           
+            $result = $stmt->fetch();
+            return $result['remaining_quantity'];
+        } catch (Exception $e) {
+            echo 'Error: ' . $e->getMessage();
+            return false;
+        }
+    }
+
+
+    // Lấy số lượng sản phẩm trong carts
+    public function getSoLuongById( $id) {
+        try {
+            $sql = 'SELECT soluong FROM carts WHERE id = :id';
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                'id' => $id
+            ]);
+           
+            $result = $stmt->fetch();
+            return $result['soluong'];
+        } catch (Exception $e) {
+            echo 'Error: ' . $e->getMessage();
+            return false;
+        }
+    }
+    // Lấy giá ở trong kho để xử lí phần tăng giảm
+    public function getPriceByIdCart( $id) {
+        try {
+            $sql = 'SELECT price FROM carts WHERE id = :id';
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                'id' => $id
+            ]);
+           
+            $result = $stmt->fetch();
+            return $result['price'];
+        } catch (Exception $e) {
+            echo 'Error: ' . $e->getMessage();
+            return false;
+        }
+    }
+    // Cập nhật sản phẩm còn lại trong kho
+    public function updateRemainingQuantity( $idpro,$remaining_quantity) {
+        try {
+            $sql = 'UPDATE carts SET  remaining_quantity = :remaining_quantity WHERE idpro = :idpro';
+ 
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                'idpro' => $idpro,
+                'remaining_quantity' => $remaining_quantity
+            ]);
+           
+        } catch (Exception $e) {
+            // Xử lý lỗi nếu có
+            echo 'Error: ' . $e->getMessage();
+            return false;
+        }
+    }
 
 }
