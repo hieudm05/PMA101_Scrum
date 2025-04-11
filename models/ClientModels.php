@@ -239,5 +239,131 @@ class ClientModels
             return false;
         }
     }
+     // Kiểm tra xem giỏ hàng có tồn tại sản phẩm
+     public function checkCarts($idUser, $idProduct){
+        try {
+            $sql = 'SELECT * FROM carts WHERE idUser = :idUser AND idpro = :idProduct';
+   
+            $stmt = $this->conn->prepare($sql);
+       
+            $stmt->execute(['idUser'=> $idUser, 'idProduct'=> $idProduct]);
+
+
+            return $stmt->fetch();
+           
+        } catch (Exception $e) {
+            echo 'Error: ' . $e->getMessage();
+            return false;
+        }
+    }
+    // Lưu sản phẩm trong giỏ hàng vào cart
+    public function addCarts($idUser, $idpro, $img, $name, $price, $soluong, $thanhtien, $mota, $remaining_quantity) {
+        // SQL để thêm sản phẩm vào giỏ hàng
+        $sql = 'INSERT INTO carts (idUser, idpro, img, name, price, soluong, thanhtien, mota, created_at, remaining_quantity)
+                VALUES (:idUser, :idpro, :img, :name, :price, :soluong, :thanhtien, :mota, NOW(), :remaining_quantity)';
+       
+        // Chuẩn bị câu lệnh SQL
+        $stmt = $this->conn->prepare($sql);
+       
+        // Thực thi câu lệnh với các tham số
+        $stmt->execute([
+            'idUser' => $idUser,
+            'idpro' => $idpro,
+            'img' => $img,
+            'name' => $name,
+            'price' => $price,
+            'soluong' => $soluong,
+            'thanhtien' => $thanhtien,
+            'mota' => $mota,
+            'remaining_quantity' => $remaining_quantity
+        ]);
+       
+        return true;
+    }
+    // Lấy số lượng trong bảng carts để kiểm tra còn tăng lên chứ
+    public function getCartQuantity( $id) {
+        try {
+            $sql = 'SELECT quantity FROM products WHERE id = :id';
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                'id' => $id
+            ]);
+           
+            $result = $stmt->fetch();
+            return $result ? $result['quantity'] : 0; // Nếu không có sản phẩm
+        } catch (Exception $e) {
+            echo 'Error: ' . $e->getMessage();
+            return false;
+        }
+    }
+
+
+    public function getSoLuongCarts($idpro, $idUser){
+        try {
+            $sql = 'SELECT soluong FROM carts WHERE idpro = :idpro AND idUser = :idUser';
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                'idpro' => $idpro,
+                'idUser' => $idUser,
+            ]);
+           
+            $result = $stmt->fetch();
+            return $result ? $result['soluong'] : 0; // Nếu không có sản phẩm
+        } catch (Exception $e) {
+            echo 'Error: ' . $e->getMessage();
+            return false;
+        }
+    }
+
+
+    public function getRemaining_quantity( $id) {
+        try {
+            $sql = 'SELECT remaining_quantity FROM carts WHERE id = :id';
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                'id' => $id
+            ]);
+           
+            $result = $stmt->fetch();
+            return $result ? $result['remaining_quantity'] : 0; // Nếu không có sản phẩm
+        } catch (Exception $e) {
+            echo 'Error: ' . $e->getMessage();
+            return false;
+        }
+    }
+    // Trả về id của sản phẩm
+    public function getIdProduct($id) {
+        try {
+            $sql = 'SELECT idpro FROM carts WHERE id = :id';
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                ':id' => $id
+            ]);
+           
+            $result = $stmt->fetchColumn();
+            return $result; // Trả về mảng các `idPro`
+        } catch (Exception $e) {
+            echo 'Error: ' . $e->getMessage();
+            return false; // Trả về false nếu có lỗi xảy ra
+        }
+    }
+   
+    // Lấy giá bên products
+    public function getPriceByPro($id){
+        try {
+            $sql = 'SELECT price FROM products WHERE id = :id';
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                'id' => $id
+            ]);
+           
+            $result = $stmt->fetch();
+            return $result['price'];
+        } catch (Exception $e) {
+            echo 'Error: ' . $e->getMessage();
+            return false;
+        }
+    }
+
 
 }
