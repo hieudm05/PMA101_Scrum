@@ -85,5 +85,150 @@ class HomeController
         $danhMuc = $this->modelAdmin->getDmById($id);
         require_once '../../views/Admins/DanhMuc/updateDm.php';
     }
+    public function postSP() {  
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {  
+            $namesp = $_POST['namesp'];  
+            $price = $_POST['price'];  
+            $mota = $_POST['mota'];  
+            $iddm = $_POST['iddm'];  
+            $quantity = $_POST['id_soluong'];
+           
+            // Kiểm tra file ảnh  
+            if (isset($_FILES['img']) && $_FILES['img']['error'] == UPLOAD_ERR_OK) {  
+                $file_save = uploadFile($_FILES['img'], 'uploads');  
+                if ($file_save) {  
+                    if ($this->modelAdmin->postSP($namesp, $price, $file_save, $mota, $iddm, $quantity)) {  
+                        header('Location: router.php?act=listSP');  
+                        exit();  
+                    } else {  
+                        echo "Lỗi khi thêm sản phẩm vào cơ sở dữ liệu.";  
+                    }  
+                } else {  
+                    echo "Lỗi khi lưu tệp ảnh.";  
+                }  
+            }  
+        } else {  
+            header('Location: /router.php?act=listSP');  
+            exit();  
+        }  
+    }
+   
+public function deleteSP() {  
+    $id = $_GET['id'];  
+
+
+    $record = $this->modelAdmin->getSPById($id);  
+   
+    if ($record) {
+        if ($this->modelAdmin->deleteSP($id)) {  
+            header('Location: router.php?act=listSP');  
+            exit;  
+        } else {  
+             echo "Không thể xóa sản phẩm.";  
+        }  
+    } else {  
+        echo "Sản phẩm không tồn tại.";  
+    }  
+}
+public function formSuaSP() {
+    $id = $_GET['id'];
+    $product = $this->modelAdmin->getSPById($id);
+    $listDanhMuc = $this->modelAdmin->getAllDanhMuc();
+
+
+    if ($product) {
+        require_once '../../views/Admins/SanPham/formupdateSP.php';
+    } else {
+        echo "Sản phẩm không tồn tại.";
+    }
+}
+
+
+
+
+public function updateSP() {  
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {  
+        $id = $_POST['id'];  
+        $namesp = $_POST['namesp'];  
+        $price = $_POST['price'];  
+        $mota = $_POST['mota'];  
+        $iddm = $_POST['iddm'];  
+        $quantity = $_POST['quantity'];
+        $img = ''; // Xử lý ảnh mới  
+
+
+        if (isset($_FILES['img']) && $_FILES['img']['error'] == 0) {  
+            // Xử lý upload ảnh mới  
+            $file_save = uploadFile($_FILES['img'], 'uploads');  
+            if ($file_save) {  
+                $img = $file_save; // Gán đường dẫn ảnh mới  
+            } else {  
+                echo "Lỗi khi lưu tệp ảnh.";  
+                return;  
+            }  
+        }  
+
+
+        // Cập nhật sản phẩm
+        $current_img = $_POST['current_img'];
+        if ($this->modelAdmin->updateSP($id, $namesp, $price, $img ?: $current_img, $mota, $iddm, $quantity)) {  
+            header('Location: router.php?act=listSP');  
+            exit;  
+        } else {  
+            echo "Lỗi khi cập nhật sản phẩm.";  
+        }  
+    } else {  
+        header('Location: router.php?act=listSP');  
+        exit();  
+    }  
+}
+
+public function listBills() {
+    $listDanhMuc = $this->modelAdmin->getAllDanhMuc();
+    $listOrders = $this->modelAdmin->getAllBill();
+    // var_dump($listOrders);
+    require_once '../../views/Admins/donHang/listDonHang.php';
+}
+public function bill_items() {
+    $id = $_GET['id'];
+    $listBill = $this->modelAdmin->getBillById($id);
+    // var_dump($listBill);
+    $lydo = $this->modelAdmin->getLyDoHuyHang($id);
+    // var_dump($lydo);
+    require_once '../../views/Admins/SanPham/chitietsp.php';
+}
+
+
+
+public function updateStatusBills() {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $bill_status = (int) $_POST['bill_status'];
+        $id = $_GET['id'];
+
+        // Lấy trạng thái hiện tại
+        $currentStatus = $this->modelAdmin->getBillStatus($id);
+        // Kiểm tra trạng thái hợp lệ
+        if ($bill_status == $currentStatus + 1) {
+            if ($this->modelAdmin->updateOrderStatus($id, $bill_status)) {
+                header('location: router.php?act=listDonHang');
+            } else {
+                header('location: router.php?act=listDonHang');
+            }
+        } else {
+            echo "Lỗi";
+            header('location: router.php?act=listDonHang');
+            // exit;
+        }
+    }
+}
+
+
+
+
+///bình luận
+public function listComments() {
+$listBinhLuan = $this->modelAdmin->getAllComments();
+require_once '../../views/Admins/BinhLuan/listComments.php';
+}
 
 }

@@ -6,5 +6,9 @@
 
 //lighter and princesssdasada
 
+<<<<<<< HEAD
+// Hiếu Sm đã giao việc trên trello
+=======
 
 // 4/4 SM đã giao việc
+>>>>>>> hieusm
