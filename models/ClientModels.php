@@ -703,7 +703,100 @@ class ClientModels
             return false;
         }
     }
+
+    // Tìm kiếm theo sản phẩm
+    public function getAllSP($search) {
+        try {
+            $sql = "SELECT * FROM products WHERE namesp LIKE '%$search%'";
+           
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute();
    
+            return $stmt->fetchAll();
+        } catch(Exception $e) {
+            echo $e->getMessage();
+        }
+    }
+    public function getSPById($id) {  
+        try {
+            $sql = 'SELECT * FROM products WHERE id ='.$id;
+   
+            $stmt = $this->conn->prepare($sql);
+       
+            $stmt->execute();
+
+
+            return $stmt->fetch();
+           
+        } catch (Exception $e) {
+            echo 'Error: ' . $e->getMessage();
+            return false;
+        }
+    }
+   
+    public function load_sanpham_cungloai($id, $iddm){
+       try {
+        $sql= "SELECT * FROM products WHERE iddm = ".$iddm." AND id <> ".$id;
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+       } catch (Exception $e) {
+        echo $e->getMessage();
+        }
+    }
+    public function getNewestProducts($limit = 4) {
+        try {
+            $sql = "SELECT * FROM products ORDER BY id DESC LIMIT :limit";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC) ?: []; // Trả về mảng rỗng nếu không có kết quả
+        } catch (Exception $e) {
+            echo 'Error: ' . $e->getMessage();
+            return []; // Trả về mảng rỗng nếu có lỗi
+        }
+    }
+   
+   
+    ///comment
+    public function addComment($idpro, $idUser, $noidung, $time) {
+        try {
+            $sql = "INSERT INTO comments (idpro, idUser, noidung, time)
+                    VALUES (:idpro, :idUser, :noidung, :time)";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                ':idpro' => $idpro,
+                ':idUser' => $idUser,
+                ':noidung' => $noidung,
+                ':time' => $time,
+            ]);
+   
+            return $stmt->rowCount() > 0;
+        } catch (PDOException $e) {
+            // Ghi log lỗi
+            file_put_contents('error_log.txt', $e->getMessage(), FILE_APPEND);
+            return false;
+        }
+    }
+   
+    // Giỏ hàng
+    public function getProductById($id){
+        try {
+            $sql = 'SELECT * FROM products WHERE id ='.$id;
+   
+            $stmt = $this->conn->prepare($sql);
+       
+            $stmt->execute();
+
+
+            return $stmt->fetch();
+           
+        } catch (Exception $e) {
+            echo 'Error: ' . $e->getMessage();
+            return false;
+        }
+    }
+
     public function __destruct() {  // Hàm hủy kết nối đối tượng
         $this->conn = null;
     }  
