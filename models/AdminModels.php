@@ -534,6 +534,64 @@ class AdminModels
         }
     }
 
+    // Lấy sản phẩm theo id bảng bill_items
+    function getQuantitiesByBillId($bill_id) {
+        $sql = "SELECT product_id, quantity
+                FROM bill_items
+                WHERE bill_id = :bill_id";
+       
+        // Chuẩn bị truy vấn
+        $stmt = $this->conn->prepare($sql);
+       
+        // Thực thi truy vấn với bill_id
+        $stmt->execute([':bill_id' => $bill_id]);
+       
+        // Lấy tất cả các product_id và quantity theo bill_id
+        $quantities = $stmt->fetchAll(PDO::FETCH_ASSOC);
+       
+        // Kiểm tra và trả về kết quả
+        if ($quantities) {
+            return $quantities;  // Trả về mảng chứa product_id và quantity của từng bản ghi
+        } else {
+            return [];  // Nếu không có kết quả, trả về mảng rỗng
+        }
+    }
+
+
+    public function updateQuantityPro($product_id, $new_quantity) {
+        try {
+            // Câu lệnh SQL để cập nhật số lượng sản phẩm trong bảng products
+            $sql = "UPDATE products SET quantity = :new_quantity WHERE id = :product_id";
+   
+            // Chuẩn bị truy vấn
+            $stmt = $this->conn->prepare($sql);
+   
+            // Thực thi truy vấn với các tham số
+            $stmt->execute([
+                ':new_quantity' => $new_quantity,
+                ':product_id' => $product_id
+            ]);
+   
+            // Kiểm tra số dòng bị ảnh hưởng để biết việc cập nhật có thành công hay không
+            if ($stmt->rowCount() > 0) {
+                echo "Cập nhật thành công số lượng cho product_id = $product_id.\n";
+            } else {
+                echo "Không tìm thấy sản phẩm với product_id = $product_id để cập nhật.\n";
+            }
+        } catch (Exception $e) {
+            echo 'Error: ' . $e->getMessage();
+            return false;
+        }
+    }
+   
+    // Lấy trạng thái đơn hàng
+    public function getBillStatus($orderId) {
+        $sql = "SELECT bill_status FROM bills WHERE id = :orderId";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(':orderId', $orderId, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchColumn() ?: 0;
+    }
 
 
     public function __destruct() {  // Hàm hủy kết nối đối tượng
