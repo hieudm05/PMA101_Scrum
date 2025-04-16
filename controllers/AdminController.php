@@ -223,6 +223,30 @@ public function updateStatusBills() {
 }
 
 
+public function deleteComment() {
+    $id = $_GET['id'];
+    if ($this->modelAdmin->deleteComment($id)) {
+        header('Location: router.php?act=listComments');
+        exit;
+    } else {
+        echo "Không thể xóa bình luận.";
+    }
+}
+public function toggleComment() {
+    $id = $_GET['id'];
+    $comment = $this->modelAdmin->getCommentById($id);
+    if ($comment) {
+        $newStatus = $comment['status'] ? 0 : 1;
+        if ($this->modelAdmin->updateCommentStatus($id, $newStatus)) {
+            header('Location: router.php?act=listComments'); 
+            exit;
+        } else {
+            echo "Không thể cập nhật trạng thái bình luận.";
+        }
+    } else {
+        echo "Bình luận không tồn tại.";
+    }
+}
 
 
 ///bình luận
@@ -230,5 +254,6 @@ public function listComments() {
 $listBinhLuan = $this->modelAdmin->getAllComments();
 require_once '../../views/Admins/BinhLuan/listComments.php';
 }
+
 
 }
