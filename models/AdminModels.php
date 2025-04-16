@@ -494,7 +494,46 @@ class AdminModels
             return false;
         }
     }
+    
+    public function getAccountById($id){
+        try {
+            $sql = 'SELECT * FROM accounts WHERE id ='.$id;
    
+            $stmt = $this->conn->prepare($sql);
+       
+            $stmt->execute();
+
+
+            return $stmt->fetch();
+           
+        } catch (Exception $e) {
+            echo 'Error: ' . $e->getMessage();
+            return false;
+        }
+    }
+    public function updateAccoutAtive($id,$active){
+        try {
+            $sql = "UPDATE accounts SET active = :active WHERE id = :id";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute(['active'=>$active, 'id'=>$id]);
+            return true;
+        } catch (Exception $e) {
+            echo 'Error: ' . $e->getMessage();
+            return false;
+        }
+    }
+    public function updateAccoutRole($id,$role){
+        try {
+            $sql = "UPDATE accounts SET role = :role WHERE id = :id";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute(['role' => $role, 'id'=>$id]);
+            return true;
+        } catch (Exception $e) {
+            echo 'Error: ' . $e->getMessage();
+            return false;
+        }
+    }
+
 
 
     public function __destruct() {  // Hàm hủy kết nối đối tượng
